@@ -11,17 +11,19 @@ import Stock from "./page/Stock";
 import Contacts from "./page/Contacts";
 import Korzina from "./page/korzina";
 import Favorites from "./page/favorites"; 
-
 import Footer from "./components/Footer";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [favorites, setFavorites] = useState([]); 
+  const [favorites, setFavorites] = useState([]);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const addToCard = (item) => {
     const found = cart.some((i) => i.id === item.id);
     if (!found) {
       setCart([...cart, item]);
+      setSuccessMessage("Muvaffaqiyatli qo'shildi!");
+      setTimeout(() => setSuccessMessage(""), 2000);
     } else {
       alert('Bu mahsulot allaqachon korzinada mavjud');
     }
@@ -35,7 +37,6 @@ function App() {
       setFavorites(favorites.filter((i) => i.id !== item.id)); 
     }
   };
-  
 
   return (
     <>
@@ -50,8 +51,24 @@ function App() {
         <Route path="/Stock" element={<Stock />} />
         <Route path="/Contacts" element={<Contacts addToCard={addToCard} addToFavorites={addToFavorites} />} />
         <Route path="/Korzina" element={<Korzina cart={cart} />} />
-        <Route path="/Favorites" element={<Favorites favorites={favorites} />} /> {/* Yangi route */}
+        <Route path="/Favorites" element={<Favorites favorites={favorites} />} />
       </Routes>
+      {successMessage && (
+        <div style={{
+          position: 'fixed', 
+          bottom: '20px', 
+          left: '50%', 
+          transform: 'translateX(-50%)', 
+          padding: '10px 20px', 
+          backgroundColor: 'green', 
+          color: 'white', 
+          borderRadius: '5px', 
+          fontWeight: 'bold', 
+          zIndex: 1000
+        }}>
+          {successMessage}
+        </div>
+      )}
       <Footer />
     </>
   );
