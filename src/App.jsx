@@ -22,10 +22,10 @@ function App() {
     const found = cart.some((i) => i.id === item.id);
     if (!found) {
       setCart([...cart, item]);
-      setSuccessMessage("Muvaffaqiyatli qo'shildi!");
+      setSuccessMessage("Добавлено успешно!");
       setTimeout(() => setSuccessMessage(""), 2000);
     } else {
-      alert('Bu mahsulot allaqachon korzinada mavjud');
+      alert('Этот товар уже в корзине.');
     }
   };
 
