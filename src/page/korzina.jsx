@@ -25,7 +25,7 @@ const Korzina = ({ cart }) => {
               <h2 className="text-lg font-semibold">{item.name}</h2>
               <p className="text-sm text-gray-600 my-2">{item.description}</p>
               <span className="font-bold text-yellow-600 text-lg">
-                {item.price} сум
+                {item.price} 
               </span>
             </div>
           ))}

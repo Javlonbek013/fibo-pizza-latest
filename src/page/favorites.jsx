@@ -24,7 +24,7 @@ const Favorites = ({ favorites }) => {
               />
               <h2 className="text-lg font-semibold">{item.name}</h2>
               <p className="text-sm text-gray-600 my-2">{item.description}</p>
-              <span className="font-bold text-yellow-600 text-lg">{item.price} сум</span>
+              <span className="font-bold text-yellow-600 text-lg">{item.price} </span>
             </div>
           ))}
         </div>

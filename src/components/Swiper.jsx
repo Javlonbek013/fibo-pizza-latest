@@ -9,11 +9,9 @@ import "swiper/css/scrollbar";
 const MySwiper = () => {
   return (
     <Swiper
-      modules={[Navigation, Autoplay, Pagination, Scrollbar]}
+      modules={[Navigation, Autoplay]}
       spaceBetween={20}
       navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
       loop
       autoplay={{
         delay: 2000,

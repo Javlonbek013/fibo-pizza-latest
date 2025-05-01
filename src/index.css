@@ -30,7 +30,7 @@
   background-color: #f7d22d;
   border-radius: 5px;
   padding: 7px 25px;
-  margin-left: 180px;
+  margin: auto;
 }
 .Favorites{
   font-family: Montserrat;
@@ -38,7 +38,7 @@
   background-color: #f7d22d;
   border-radius: 5px;
   padding: 7px 25px;
-  margin-left: 50px;
+  margin: auto;
 }
 .logo {
   display: flex;

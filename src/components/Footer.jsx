@@ -129,7 +129,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="border p-3 rounded-lg">
-              <button className="bg-yellow-400 text-black py-2 px-4 rounded-lg">
+              <button className="bg-yellow-400 text-black py-2  rounded-lg">
                 Написать нам
               </button>
             </li>

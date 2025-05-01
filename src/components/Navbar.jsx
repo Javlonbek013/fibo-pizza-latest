@@ -81,7 +81,7 @@ const Navbar = () => {
       </div>
 
       <div className={`sm:flex ${isMenuOpen ? "block" : "hidden"} mt-4`}>
-        <ul className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4">
+        <ul className="flex flex-col sm:flex-row text-center sm 2xl:justify-between sm:items-center gap-2 sm:gap-4">
           {menuItems.map((item) => (
             <li key={item.path}>
               <NavLink

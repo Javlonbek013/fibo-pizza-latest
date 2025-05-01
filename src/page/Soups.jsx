@@ -44,7 +44,7 @@ const Soup_list = ({ addToCard, addToFavorites }) => {
             <h2 className="text-lg font-semibold">{item.name}</h2>
             <p className="text-sm text-gray-600 mt-2">{item.description}</p>
             <div className="flex justify-between items-center mt-4">
-              <span className="font-bold text-yellow-600">{item.price} сум</span>
+              <span className="font-bold text-yellow-600">{item.price} </span>
               <button
                 onClick={() => addToCard(item)}
                 className="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded transition"
