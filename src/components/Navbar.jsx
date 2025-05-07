@@ -14,12 +14,6 @@ const Navbar = () => {
     { path: "/Drinks", label: "Напитки" },
     { path: "/Stock", label: "Акции" },
     { path: "/Contacts", label: "Контакты" },
-    {
-      path: "/Korzina", label: <button className="Basket">Корзина</button>,
-    },
-    {
-      path: "/Favorites", label: <button className="Favorites">Избранное</button>,
-    },
   ];
 
   return (
@@ -80,8 +74,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`sm:flex ${isMenuOpen ? "block" : "hidden"} mt-4`}>
-        <ul className="flex flex-col sm:flex-row text-center sm 2xl:justify-between sm:items-center gap-2 sm:gap-4">
+      <div className={`sm:flex ${isMenuOpen ? "block" : "hidden"} mt-4 sm:items-center sm:justify-between`}>
+        <ul className="flex flex-col sm:flex-row text-center gap-2 sm:gap-4">
           {menuItems.map((item) => (
             <li key={item.path}>
               <NavLink
@@ -91,13 +85,22 @@ const Navbar = () => {
                     ? "px-4 py-2 rounded-xl text-blue-700 font-semibold"
                     : "px-4 py-2 text-black rounded-xl"
                 }
-                onClick={() => setIsMenuOpen(false)} 
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </NavLink>
             </li>
           ))}
         </ul>
+
+        <div className="flex justify-center sm:justify-end gap-4 mt-4 sm:mt-0">
+          <NavLink to="/Korzina" onClick={() => setIsMenuOpen(false)}>
+            <button className="Basket">Корзина</button>
+          </NavLink>
+          <NavLink to="/Favorites" onClick={() => setIsMenuOpen(false)}>
+            <button className="Favorites">Избранное</button>
+          </NavLink>
+        </div>
       </div>
     </div>
   );
