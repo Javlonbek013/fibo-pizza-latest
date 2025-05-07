@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { logo, star, yandexEda, point } from "../assets/data";
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -18,6 +17,7 @@ const Navbar = () => {
 
   return (
     <div className="container mx-auto px-4 py-2">
+
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4 sm:gap-8">
           <img src={logo} alt="Logo" className="w-14 sm:w-auto" />
@@ -43,6 +43,7 @@ const Navbar = () => {
         <div className="hidden sm:flex items-center gap-6">
           <button className="button">Заказать звонок</button>
           <div className="text-yellow-500 font-bold text-lg">998 93-917-07-31</div>
+          
         </div>
 
         <div className="sm:hidden">
