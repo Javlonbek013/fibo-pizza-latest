@@ -38,28 +38,93 @@ const Footer = () => {
 
           {/* Linklar */}
           <div className="flex flex-col sm:flex-row sm:space-x-10 text-sm font-semibold gap-2">
-            <p className="hover:text-yellow-600 cursor-pointer">Калорийность и состав</p>
-            <p className="hover:text-yellow-600 cursor-pointer">Правовая информация</p>
+            <p className="hover:text-yellow-600 cursor-pointer">
+              Калорийность и состав
+            </p>
+            <p className="hover:text-yellow-600 cursor-pointer">
+              Правовая информация
+            </p>
           </div>
 
           {/* Tarmoqlar */}
           <p className="font-bold text-sm">Мы в соцсетях</p>
           <ul className="grid grid-cols-2 sm:grid-cols-3 text-sm gap-y-2 sm:gap-y-3">
-            {["Youtube", "Facebook", "Москва ул. Проспект", "Instagram", "ВКонтакте", "Вернадского 86В"].map((item, index) => (
-              <li key={index}>
-                <a href="#" className="hover:text-yellow-600 transition">{item}</a>
-              </li>
-            ))}
+            <li>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-600 transition"
+              >
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-600 transition"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://maps.google.com/?q=Москва ул. Проспект"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-600 transition"
+              >
+                Москва ул. Проспект
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-600 transition"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://vk.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-600 transition"
+              >
+                ВКонтакте
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://maps.google.com/?q=Вернадского 86В"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-600 transition"
+              >
+                Вернадского 86В
+              </a>
+            </li>
           </ul>
 
           {/* Pastki qism */}
           <div className="hidden md:flex justify-between items-center border-t border-gray-300 pt-6">
-            <p className="text-xs text-gray-500">YaBao Все права защищены © 2021</p>
+            <p className="text-xs text-gray-500">
+              YaBao Все права защищены © 2021
+            </p>
             <ul className="flex space-x-3 items-center">
               {[group3, group4, group2].map((img, index) => (
                 <li key={index}>
                   <a href="#">
-                    <img src={img} alt="visa" className="w-12 hover:scale-110 transition" />
+                    <img
+                      src={img}
+                      alt="visa"
+                      className="w-12 hover:scale-110 transition"
+                    />
                   </a>
                 </li>
               ))}
@@ -69,13 +134,26 @@ const Footer = () => {
 
         {/* O'ng blok */}
         <div className="space-y-6 lg:col-span-2">
-          <p className="font-bold text-sm">Остались вопросы? А мы всегда на связи:</p>
+          <p className="font-bold text-sm">
+            Остались вопросы? А мы всегда на связи:
+          </p>
           <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
-            {[image, image2, image3, image4, image5, image6].map((img, i) => (
-              <li key={i} className="border rounded-lg p-2 hover:shadow-lg transition bg-white">
-                <a href="#"><img src={img} alt="icon" className="w-8 h-8 mx-auto" /></a>
-              </li>
-            ))}
+            {[image, image2, image3, image4, image5, image6].map(
+              (img, i) => (
+                <li
+                  key={i}
+                  className="border rounded-lg p-2 hover:shadow-lg transition bg-white"
+                >
+                  <a href="#">
+                    <img
+                      src={img}
+                      alt="icon"
+                      className="w-8 h-8 mx-auto"
+                    />
+                  </a>
+                </li>
+              )
+            )}
             <li className="col-span-3 sm:col-span-2 md:col-span-3">
               <button className="w-full bg-yellow-400 text-black py-2 rounded shadow hover:bg-yellow-300 transition">
                 Написать нам
@@ -85,7 +163,10 @@ const Footer = () => {
 
           {/* Telefon tugmasi */}
           <div className="space-y-2 hidden md:block">
-            <a className="text-yellow-500 text-lg font-bold block" href="tel:84993918449">
+            <a
+              className="text-yellow-500 text-lg font-bold block"
+              href="tel:84993918449"
+            >
               8 499 391-84-49
             </a>
             <button className="bg-yellow-400 text-black px-5 py-2 rounded shadow hover:bg-yellow-300 transition">
