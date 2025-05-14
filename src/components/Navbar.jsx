@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { logo, star, yandexEda, point } from "../assets/data";
 
 const Navbar = () => {
@@ -17,27 +17,26 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-white shadow-md py-3">
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Left section - Logo & Info */}
-        <div className="flex items-center gap-4 sm:gap-8">
-          <img src={logo} alt="Logo" className="w-14 sm:w-20" />
+    <header className="bg-white border-b shadow-sm">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <img src={logo} alt="Logo" className="w-12 sm:w-16" />
           <div className="hidden sm:block">
-            <p className="font-semibold text-base">
+            <p className="text-sm font-medium">
               Доставка пасты <span className="text-yellow-500">Москва</span>
             </p>
-            <div className="flex text-sm font-medium items-center gap-4 mt-1">
-              <div className="flex items-center gap-2">
+            <div className="flex text-xs text-gray-600 items-center gap-4 mt-1">
+              <div className="flex items-center gap-1">
                 <img src={yandexEda} alt="yandex" className="w-4 h-4" />
                 Яндекс еда
-                <img src={point} alt="dot" className="w-2.5 h-2.5" />
+                <img src={point} alt="dot" className="w-2 h-2" />
                 <span className="flex items-center gap-1">
                   4.8 <img src={star} alt="rating" className="w-4 h-4" />
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 Время доставки
-                <img src={point} alt="dot" className="w-2.5 h-2.5" />
+                <img src={point} alt="dot" className="w-2 h-2" />
                 от 31 мин
               </div>
             </div>
