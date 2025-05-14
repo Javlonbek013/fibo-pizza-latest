@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { logo, star, yandexEda, point } from "../assets/data";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,40 +17,46 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-2">
-
-      <div className="flex justify-between items-center">
+    <header className="bg-white shadow-md py-3">
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Left section - Logo & Info */}
         <div className="flex items-center gap-4 sm:gap-8">
-          <img src={logo} alt="Logo" className="w-14 sm:w-auto" />
+          <img src={logo} alt="Logo" className="w-14 sm:w-20" />
           <div className="hidden sm:block">
-            <div className="font-semibold text-[17px] leading-[100%]">
+            <p className="font-semibold text-base">
               Доставка пасты <span className="text-yellow-500">Москва</span>
-            </div>
-            <div className="flex items-center font-semibold text-[13px] gap-4 pt-2">
-              <span className="flex gap-2 items-center">
-                <img src={yandexEda} alt="" className="w-4 h-4" /> Яндекс еда
-                <img src={point} alt="" className="w-3 h-3" />
-                <span className="flex gap-1 items-center">
-                  4.8 <img src={star} alt="" className="w-4 h-4" />
+            </p>
+            <div className="flex text-sm font-medium items-center gap-4 mt-1">
+              <div className="flex items-center gap-2">
+                <img src={yandexEda} alt="yandex" className="w-4 h-4" />
+                Яндекс еда
+                <img src={point} alt="dot" className="w-2.5 h-2.5" />
+                <span className="flex items-center gap-1">
+                  4.8 <img src={star} alt="rating" className="w-4 h-4" />
                 </span>
-              </span>
-              <span className="flex gap-2 items-center">
-                Время доставки <img src={point} alt="" className="w-3 h-3" /> от 31 мин
-              </span>
+              </div>
+              <div className="flex items-center gap-2">
+                Время доставки
+                <img src={point} alt="dot" className="w-2.5 h-2.5" />
+                от 31 мин
+              </div>
             </div>
           </div>
         </div>
 
         <div className="hidden sm:flex items-center gap-6">
-          <button className="button">Заказать звонок</button>
-          <div className="text-yellow-500 font-bold text-lg">998 93-917-07-31</div>
-          
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-xl transition">
+            Заказать звонок
+          </button>
+          <div className="text-yellow-500 font-bold text-lg">
+            998 93-917-07-31
+          </div>
         </div>
 
         <div className="sm:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7 text-gray-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -75,18 +82,22 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`sm:flex ${isMenuOpen ? "block" : "hidden"} mt-4 sm:items-center sm:justify-between`}>
-        <ul className="flex flex-col sm:flex-row text-center gap-2 sm:gap-4">
+      <nav
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } sm:flex sm:items-center sm:justify-between container mx-auto px-4 mt-4`}
+      >
+        <ul className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
           {menuItems.map((item) => (
             <li key={item.path}>
               <NavLink
                 to={item.path}
+                onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "px-4 py-2 rounded-xl text-blue-700 font-semibold"
-                    : "px-4 py-2 text-black rounded-xl"
+                    ? "text-blue-700 font-semibold px-3 py-2 rounded-xl bg-blue-100"
+                    : "text-gray-700 hover:text-blue-700 px-3 py-2 rounded-xl transition"
                 }
-                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </NavLink>
@@ -96,14 +107,18 @@ const Navbar = () => {
 
         <div className="flex justify-center sm:justify-end gap-4 mt-4 sm:mt-0">
           <NavLink to="/Korzina" onClick={() => setIsMenuOpen(false)}>
-            <button className="Basket">Корзина</button>
+            <button className="bg-yellow-500 text-white px-4 py-2 rounded-xl hover:bg-gray-900 transition">
+              Корзина
+            </button>
           </NavLink>
           <NavLink to="/Favorites" onClick={() => setIsMenuOpen(false)}>
-            <button className="Favorites">Избранное</button>
+            <button className="bg-yellow-500 text-white px-4 py-2 rounded-xl hover:bg-pink-600 transition">
+              Избранное
+            </button>
           </NavLink>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 

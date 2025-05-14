@@ -11,7 +11,6 @@ const Drinks_list = ({ addToCard, addToFavorites }) => {
 
   const [favoriteDrinks, setFavoriteDrinks] = useState(getFavoriteDrinksFromStorage);
 
-  // Saqlash localStorage'ga
   useEffect(() => {
     localStorage.setItem('favoriteDrinks', JSON.stringify(favoriteDrinks));
   }, [favoriteDrinks]);
@@ -21,7 +20,7 @@ const Drinks_list = ({ addToCard, addToFavorites }) => {
       setFavoriteDrinks(favoriteDrinks.filter(id => id !== drink.id));
     } else {
       setFavoriteDrinks([...favoriteDrinks, drink.id]);
-      addToFavorites(drink); // faqat yangi qo‘shilganida chaqilsin
+      addToFavorites(drink); 
     }
   };
 

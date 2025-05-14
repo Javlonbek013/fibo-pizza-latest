@@ -16,9 +16,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100 text-gray-800">
       <div className="container py-12 px-4 md:px-8 grid grid-cols-1 lg:grid-cols-5 gap-12">
-        {/* Chap blok */}
         <div className="space-y-8 lg:col-span-3">
-          {/* Logo va telefon */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <a href="#">
               <img src={logo} alt="logo" className="w-32" />
@@ -36,7 +34,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Linklar */}
           <div className="flex flex-col sm:flex-row sm:space-x-10 text-sm font-semibold gap-2">
             <p className="hover:text-yellow-600 cursor-pointer">
               Калорийность и состав
@@ -46,7 +43,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Tarmoqlar */}
           <p className="font-bold text-sm">Мы в соцсетях</p>
           <ul className="grid grid-cols-2 sm:grid-cols-3 text-sm gap-y-2 sm:gap-y-3">
             <li>
@@ -111,7 +107,6 @@ const Footer = () => {
             </li>
           </ul>
 
-          {/* Pastki qism */}
           <div className="hidden md:flex justify-between items-center border-t border-gray-300 pt-6">
             <p className="text-xs text-gray-500">
               YaBao Все права защищены © 2021
@@ -132,7 +127,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* O'ng blok */}
         <div className="space-y-6 lg:col-span-2">
           <p className="font-bold text-sm">
             Остались вопросы? А мы всегда на связи:
@@ -161,7 +155,6 @@ const Footer = () => {
             </li>
           </ul>
 
-          {/* Telefon tugmasi */}
           <div className="space-y-2 hidden md:block">
             <a
               className="text-yellow-500 text-lg font-bold block"
