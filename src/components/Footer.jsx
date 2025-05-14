@@ -14,135 +14,81 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-12">
-      <div className="container grid lg:grid-cols-5 gap-10">
-        <div className="space-y-6 lg:col-span-3">
-          <div className="flex items-center justify-between">
-            <a href="#" className="flex items-center">
+    <footer className="bg-gray-100 text-gray-800">
+      <div className="container py-12 px-4 md:px-8 grid grid-cols-1 lg:grid-cols-5 gap-12">
+        {/* Chap blok */}
+        <div className="space-y-8 lg:col-span-3">
+          {/* Logo va telefon */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <a href="#">
               <img src={logo} alt="logo" className="w-32" />
             </a>
-            <div className="space-y-1 text-right md:hidden">
+            <div className="space-y-2 block md:hidden text-right">
               <a
-                className="text-yellow-400 font-bold text-lg"
+                className="text-xl font-semibold text-yellow-500 block"
                 href="tel:+998939170731"
               >
-                998 93-917-07-31
+                +998 93 917 07 31
               </a>
-              <button className="bg-yellow-400 text-black px-4 py-2 rounded-lg">
+              <button className="bg-yellow-400 text-black px-4 py-2 rounded shadow hover:bg-yellow-300 transition">
                 Заказать звонок
               </button>
             </div>
           </div>
 
-          <div className="font-bold text-sm md:text-base space-x-8 flex">
-            <p>Калорийность и состав</p>
-            <p>Правовая информация</p>
+          {/* Linklar */}
+          <div className="flex flex-col sm:flex-row sm:space-x-10 text-sm font-semibold gap-2">
+            <p className="hover:text-yellow-600 cursor-pointer">Калорийность и состав</p>
+            <p className="hover:text-yellow-600 cursor-pointer">Правовая информация</p>
           </div>
 
-          <p className="font-bold text-xs md:text-base">Мы в соцсетях</p>
-          <ul className="grid grid-cols-3 md:grid-cols-4 gap-4">
-            <li>
-              <a href="#" className="text-yellow-400">
-                Youtube
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-yellow-400">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-yellow-400">
-                Москва ул. Проспект
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-yellow-400">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-yellow-400">
-                ВКонтакте
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-yellow-400">
-                Вернадского 86В
-              </a>
-            </li>
+          {/* Tarmoqlar */}
+          <p className="font-bold text-sm">Мы в соцсетях</p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 text-sm gap-y-2 sm:gap-y-3">
+            {["Youtube", "Facebook", "Москва ул. Проспект", "Instagram", "ВКонтакте", "Вернадского 86В"].map((item, index) => (
+              <li key={index}>
+                <a href="#" className="hover:text-yellow-600 transition">{item}</a>
+              </li>
+            ))}
           </ul>
 
-          <div className="hidden md:flex justify-between items-center mt-6">
-            <p>YaBao Все права защищены © 2021</p>
-            <ul className="flex space-x-4 items-center">
-              <li>
-                <a href="#">
-                  <img src={group3} alt="payment" className="w-8 h-8" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src={group4} alt="payment" className="w-8 h-8" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src={group2} alt="payment" className="w-8 h-8" />
-                </a>
-              </li>
+          {/* Pastki qism */}
+          <div className="hidden md:flex justify-between items-center border-t border-gray-300 pt-6">
+            <p className="text-xs text-gray-500">YaBao Все права защищены © 2021</p>
+            <ul className="flex space-x-3 items-center">
+              {[group3, group4, group2].map((img, index) => (
+                <li key={index}>
+                  <a href="#">
+                    <img src={img} alt="visa" className="w-12 hover:scale-110 transition" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
+        {/* O'ng blok */}
         <div className="space-y-6 lg:col-span-2">
-          <p className="font-bold text-lg">Остались вопросы? А мы всегда на связи:</p>
-          <ul className="grid grid-cols-3 sm:grid-cols-4 gap-4">
-            <li className="border p-3 rounded-lg">
-              <a href="#">
-                <img src={image} alt="icon" className="w-10 h-10" />
-              </a>
-            </li>
-            <li className="border p-3 rounded-lg">
-              <a href="#">
-                <img src={image2} alt="icon" className="w-10 h-10" />
-              </a>
-            </li>
-            <li className="border p-3 rounded-lg">
-              <a href="#">
-                <img src={image3} alt="icon" className="w-10 h-10" />
-              </a>
-            </li>
-            <li className="border p-3 rounded-lg">
-              <a href="#">
-                <img src={image4} alt="icon" className="w-10 h-10" />
-              </a>
-            </li>
-            <li className="border p-3 rounded-lg">
-              <a href="#">
-                <img src={image5} alt="icon" className="w-10 h-10" />
-              </a>
-            </li>
-            <li className="border p-3 rounded-lg">
-              <a href="#">
-                <img src={image6} alt="icon" className="w-10 h-10" />
-              </a>
-            </li>
-            <li className="border p-3 rounded-lg">
-              <button className="bg-yellow-400 text-black py-2  rounded-lg">
+          <p className="font-bold text-sm">Остались вопросы? А мы всегда на связи:</p>
+          <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+            {[image, image2, image3, image4, image5, image6].map((img, i) => (
+              <li key={i} className="border rounded-lg p-2 hover:shadow-lg transition bg-white">
+                <a href="#"><img src={img} alt="icon" className="w-8 h-8 mx-auto" /></a>
+              </li>
+            ))}
+            <li className="col-span-3 sm:col-span-2 md:col-span-3">
+              <button className="w-full bg-yellow-400 text-black py-2 rounded shadow hover:bg-yellow-300 transition">
                 Написать нам
               </button>
             </li>
           </ul>
 
-          <div className="hidden md:block space-y-3 mt-6">
-            <a
-              className="text-yellow-400 text-xl"
-              href="tel:+8499391849"
-            >
+          {/* Telefon tugmasi */}
+          <div className="space-y-2 hidden md:block">
+            <a className="text-yellow-500 text-lg font-bold block" href="tel:84993918449">
               8 499 391-84-49
             </a>
-            <button className="bg-yellow-400 text-black py-2 px-4 rounded-lg">
+            <button className="bg-yellow-400 text-black px-5 py-2 rounded shadow hover:bg-yellow-300 transition">
               Заказать звонок
             </button>
           </div>
