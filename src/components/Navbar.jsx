@@ -48,7 +48,7 @@ const Navbar = () => {
             Заказать звонок
           </button>
           <a
-            href="tel:998939170731"
+            href="tel:998991177697"
             className="text-yellow-500 font-bold text-lg hover:underline"
           >
             998 99-117-76-97

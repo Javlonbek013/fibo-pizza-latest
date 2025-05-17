@@ -158,9 +158,9 @@ const Footer = () => {
           <div className="space-y-2 hidden md:block">
             <a
               className="text-yellow-500 text-lg font-bold block"
-              href="tel:84993918449"
+              href="tel:998991177697"
             >
-              8 499 391-84-49
+              998 99-117-76-97
             </a>
             <button className="bg-yellow-400 text-black px-5 py-2 rounded shadow hover:bg-yellow-300 transition">
               Заказать звонок
