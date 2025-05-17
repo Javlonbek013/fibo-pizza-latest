@@ -21,18 +21,7 @@ const Footer = () => {
             <a href="#">
               <img src={logo} alt="logo" className="w-32 mx-auto md:mx-0" />
             </a>
-            {/* Telefon va tugma har doim ko‘rinadi va responsiv */}
-            <div className="space-y-2 text-center md:text-right">
-              <a
-                className="text-xl font-semibold text-yellow-500 block"
-                href="tel:+998939170731"
-              >
-                +998 93 917 07 31
-              </a>
-              <button className="bg-yellow-400 text-black px-4 py-2 rounded shadow hover:bg-yellow-300 transition">
-                Заказать звонок
-              </button>
-            </div>
+        
           </div>
 
           <div className="flex flex-col sm:flex-row sm:space-x-10 text-sm font-semibold gap-2">
@@ -149,7 +138,6 @@ const Footer = () => {
               </button>
             </li>
           </ul>
-
           {/* Telefon raqami va tugma har doim ko‘rinadi, katta ekranda o'ngda, kichikda markazda */}
           <div className="space-y-2 text-center md:text-left">
             <a
