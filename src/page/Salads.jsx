@@ -3,27 +3,48 @@ import salads from "../list/Salad_list";
 import like from "../assets/images/heart.png";
 import liked from "../assets/images/heart (1).png";
 
-const Salad_list = ({ addToCard, addToFavorites }) => {
+const Salad_list = () => {
+  const getCartFromStorage = () => {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  };
+
   const getFavoriteSaladsFromStorage = () => {
     const storedFavorites = localStorage.getItem("favoriteSalads");
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   };
 
+  const [cart, setCart] = useState(getCartFromStorage);
   const [favoriteSalads, setFavoriteSalads] = useState(getFavoriteSaladsFromStorage);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   useEffect(() => {
     localStorage.setItem("favoriteSalads", JSON.stringify(favoriteSalads));
   }, [favoriteSalads]);
 
-  const handleAddToFavorites = (item) => {
-    addToFavorites(item);
+  const addToCard = (item) => {
+    setCart(prevCart => {
+      const itemInCart = prevCart.find(cartItem => cartItem.id === item.id);
+      if (itemInCart) {
+        return prevCart.map(cartItem =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        );
+      } else {
+        return [...prevCart, { ...item, quantity: 1 }];
+      }
+    });
+  };
 
+  const handleAddToFavorites = (item) => {
     if (favoriteSalads.includes(item.id)) {
-      const updatedFavorites = favoriteSalads.filter((id) => id !== item.id);
-      setFavoriteSalads(updatedFavorites);
+      setFavoriteSalads(favoriteSalads.filter(id => id !== item.id));
     } else {
-      const updatedFavorites = [...favoriteSalads, item.id];
-      setFavoriteSalads(updatedFavorites);
+      setFavoriteSalads([...favoriteSalads, item.id]);
     }
   };
 

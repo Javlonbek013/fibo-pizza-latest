@@ -18,9 +18,10 @@ const Drinks_list = ({ addToCard, addToFavorites }) => {
   const handleAddToFavorites = (drink) => {
     if (favoriteDrinks.includes(drink.id)) {
       setFavoriteDrinks(favoriteDrinks.filter(id => id !== drink.id));
+      addToFavorites({ ...drink, removed: true });
     } else {
       setFavoriteDrinks([...favoriteDrinks, drink.id]);
-      addToFavorites(drink); 
+      addToFavorites(drink);
     }
   };
 
