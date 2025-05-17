@@ -28,9 +28,13 @@ const Korzina = ({ cart }) => {
 
   const decrementQuantity = (id) => {
     setCartItems(prev =>
-      prev.map(item =>
-        item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
-      )
+      prev
+        .map(item =>
+          item.id === id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter(item => item.quantity > 0) // quantity 0 bo'lsa o'chiradi
     );
   };
 
