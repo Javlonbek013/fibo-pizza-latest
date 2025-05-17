@@ -47,9 +47,12 @@ const Navbar = () => {
           <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-xl transition">
             Заказать звонок
           </button>
-          <div className="text-yellow-500 font-bold text-lg">
-            998 93-917-07-31
-          </div>
+          <a
+            href="tel:998939170731"
+            className="text-yellow-500 font-bold text-lg hover:underline"
+          >
+            998 99-117-76-97
+          </a>
         </div>
 
         <div className="sm:hidden">
