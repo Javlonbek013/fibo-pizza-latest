@@ -1,50 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import pizzas from "../list/Pizza_list";
 import like from "../assets/images/heart.png";
 import liked from "../assets/images/heart (1).png";
 
-const Pizza_list = () => {
+const Pizza_list = ({ addToCard, addToFavorites }) => {
   const getFavoritePizzasFromStorage = () => {
     const stored = localStorage.getItem("favoritePizzas");
     return stored ? JSON.parse(stored) : [];
   };
 
-  const getCartFromStorage = () => {
-    const stored = localStorage.getItem("cart");
-    return stored ? JSON.parse(stored) : [];
-  };
-
   const [favoritePizzas, setFavoritePizzas] = useState(getFavoritePizzasFromStorage);
-  const [cart, setCart] = useState(getCartFromStorage);
-
-  useEffect(() => {
-    localStorage.setItem("favoritePizzas", JSON.stringify(favoritePizzas));
-  }, [favoritePizzas]);
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
-  const addToCard = (item) => {
-    setCart(prevCart => {
-      const found = prevCart.find(cartItem => cartItem.id === item.id);
-      if (found) {
-        return prevCart.map(cartItem =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
-        );
-      }
-      return [...prevCart, { ...item, quantity: 1 }];
-    });
-  };
 
   const handleAddToFavorites = (item) => {
+    addToFavorites(item);
+    let updated;
     if (favoritePizzas.includes(item.id)) {
-      setFavoritePizzas(favoritePizzas.filter(id => id !== item.id));
+      updated = favoritePizzas.filter((id) => id !== item.id);
     } else {
-      setFavoritePizzas([...favoritePizzas, item.id]);
+      updated = [...favoritePizzas, item.id];
     }
+    setFavoritePizzas(updated);
+    localStorage.setItem("favoritePizzas", JSON.stringify(updated));
   };
 
   return (
