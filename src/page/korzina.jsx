@@ -15,7 +15,7 @@ const Korzina = ({ cart }) => {
   const incrementQuantity = (id) => {
     setCartItems(prevItems =>
       prevItems.map(item =>
-        item.id === id && item.quantity < 2
+        item.id === id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
@@ -55,7 +55,7 @@ const Korzina = ({ cart }) => {
               <h2 className="text-lg font-semibold">{item.name}</h2>
               <p className="text-sm text-gray-600 my-2">{item.description}</p>
               <span className="font-bold text-yellow-600 text-lg">
-                {item.price} 
+                {item.price * item.quantity} 
               </span>
               <div className="mt-4 flex items-center space-x-3">
                 <button
