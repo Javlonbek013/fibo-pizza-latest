@@ -49,7 +49,7 @@ const Navbar = () => {
           </button>
           <a
             href="tel:998991177697"
-            className="text-yellow-500 font-bold text-lg hover:underline"
+            className="text-yellow-500 font-bold text-lg"
           >
             998 99-117-76-97
           </a>
