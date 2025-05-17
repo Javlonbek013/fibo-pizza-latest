@@ -8,6 +8,7 @@ const Korzina = ({ cart }) => {
     const initializedCart = cart.map(item => ({
       ...item,
       quantity: 1,
+      price: Number(item.price) || 0, // price ni raqamga aylantiramiz, null bo'lsa 0 qo'yamiz
     }));
     setCartItems(initializedCart);
   }, [cart]);
@@ -55,7 +56,7 @@ const Korzina = ({ cart }) => {
               <h2 className="text-lg font-semibold">{item.name}</h2>
               <p className="text-sm text-gray-600 my-2">{item.description}</p>
               <span className="font-bold text-yellow-600 text-lg">
-                {Number(item.price) * item.quantity}
+                {item.price * item.quantity}
               </span>
               <div className="mt-4 flex items-center space-x-3">
                 <button
