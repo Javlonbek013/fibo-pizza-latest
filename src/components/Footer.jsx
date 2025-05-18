@@ -37,7 +37,7 @@ const Footer = () => {
           <ul className="grid grid-cols-2 sm:grid-cols-3 text-sm gap-y-2 sm:gap-y-3">
             <li>
               <a
-                href="https://www.youtube.com/"
+                href="https://www.youtube.com/@Javasuper245"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow-600 transition"
@@ -47,7 +47,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/profile.php?id=61576190410086"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow-600 transition"
@@ -67,7 +67,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/joktamov1313/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow-600 transition"
