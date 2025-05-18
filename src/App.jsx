@@ -40,19 +40,33 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Pizza" element={<Pizza addToCard={addToCard} addToFavorites={addToFavorites} />} />
-        <Route path="/Paste" element={<Pasta addToCard={addToCard} addToFavorites={addToFavorites} />} />
-        <Route path="/Soups" element={<Soups addToCard={addToCard} addToFavorites={addToFavorites} />} />
-        <Route path="/Salads" element={<Salads addToCard={addToCard} addToFavorites={addToFavorites} />} />
-        <Route path="/Drinks" element={<Drinks addToCard={addToCard} addToFavorites={addToFavorites} />} />
-        <Route path="/Stock" element={<Stock />} />
-        <Route path="/Contacts" element={<Contacts addToCard={addToCard} addToFavorites={addToFavorites} />} />
-        <Route path="/Korzina" element={<Korzina cart={cart} />} />
-        <Route path="/Favorites" element={<Favorites favorites={favorites} />} />
-      </Routes>
+      <div style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        backgroundColor: "white",
+        boxShadow: "0 1px 5px rgba(0,0,0,0.1)",
+      }}>
+        <Navbar />
+      </div>
+
+      <div style={{ paddingTop: "140px" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Pizza" element={<Pizza addToCard={addToCard} addToFavorites={addToFavorites} />} />
+          <Route path="/Paste" element={<Pasta addToCard={addToCard} addToFavorites={addToFavorites} />} />
+          <Route path="/Soups" element={<Soups addToCard={addToCard} addToFavorites={addToFavorites} />} />
+          <Route path="/Salads" element={<Salads addToCard={addToCard} addToFavorites={addToFavorites} />} />
+          <Route path="/Drinks" element={<Drinks addToCard={addToCard} addToFavorites={addToFavorites} />} />
+          <Route path="/Stock" element={<Stock />} />
+          <Route path="/Contacts" element={<Contacts addToCard={addToCard} addToFavorites={addToFavorites} />} />
+          <Route path="/Korzina" element={<Korzina cart={cart} />} />
+          <Route path="/Favorites" element={<Favorites favorites={favorites} />} />
+        </Routes>
+      </div>
+
       {successMessage && (
         <div style={{
           position: 'fixed', 
@@ -69,6 +83,7 @@ function App() {
           {successMessage}
         </div>
       )}
+
       <Footer />
     </>
   );
